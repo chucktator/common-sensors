@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<robot name="sensor_asus_xtion_pro" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="sensor_asus_xtion_pro" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<xacro:include filename="$(find common_sensors)/urdf/sensors/xtion_gazebo.urdf.xacro"/>
-	
+
 	<!-- Xacro properties -->
-	<xacro:property name="M_PI" value="3.1415926535897931" /> 
+	<xacro:property name="M_PI" value="3.1415926535897931" />
 	<xacro:property name="M_SCALE" value="0.001"/>
-	<xacro:property name="xtion_depth_frame_py" value="0.0499" /> <!-- previously -0.022 --> 
-	<xacro:property name="xtion_rgb_frame_py" value="0.022" /> 
+	<xacro:property name="xtion_depth_frame_py" value="0.0499" /> <!-- previously -0.022 -->
+	<xacro:property name="xtion_rgb_frame_py" value="0.022" />
 	<xacro:property name="xtion_camera_link_py" value="0" />
 
-	<!-- 
+	<!--
 	To use from files including this one. This is just a constant which contains the height of the xtion.
         -->
 	<xacro:property name="xtion_height" value="0.026" />
@@ -65,7 +65,7 @@
 		</link>
 
 		<joint name="${camera_name}_joint" type="fixed">
-			<origin xyz="0 ${xtion_camera_link_py} 0" 
+			<origin xyz="0 ${xtion_camera_link_py} 0"
 					rpy="0 0 0"/>
 			<parent link="${camera_name}_base_frame"/>
 			<child link="${camera_name}_link"/>

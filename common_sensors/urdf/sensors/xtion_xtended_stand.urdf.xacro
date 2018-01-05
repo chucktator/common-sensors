@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="xtion_stand" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="xtion_stand" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<xacro:include filename="$(find common_sensors)/urdf/sensors/xtion.urdf.xacro"/>
 
 	<xacro:macro name="xtion_standoff" params="parent number x_loc y_loc z_loc height">
@@ -87,10 +87,10 @@
 		</link>
 	</xacro:macro>
 
-	<xacro:property name="cyl_height" value="0.203" /> 
-	<xacro:property name="plate_thickness" value="0.006" /> 
-	<xacro:property name="xtion_mount_z" value="0.035" /> 
-	<!--xacro:property name="tilting_angle" value="-0.7853" /--> 
+	<xacro:property name="cyl_height" value="0.203" />
+	<xacro:property name="plate_thickness" value="0.006" />
+	<xacro:property name="xtion_mount_z" value="0.035" />
+	<!--xacro:property name="tilting_angle" value="-0.7853" /-->
 	<xacro:macro name="xtion_stand" params="parent tilting_angle">
 		<xacro:xtion_standoff number="1" parent="${parent}" x_loc="0" y_loc="-0.1" z_loc="${cyl_height/2}" height="${cyl_height}"/>
 		<xacro:xtion_standoff number="2" parent="${parent}" x_loc="0" y_loc="0.1" z_loc="${cyl_height/2}" height="${cyl_height}"/>
